@@ -1,25 +1,36 @@
 <head>
-  <title>rede-hike</title>
+    <title>rede-hike</title>
 </head>
 
-<body>
-  <h1>Bem vind@s à Hike </h1>
-
-  {{> hello}}
-  {{> info}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p> Isso é um parágrafo </p>
+<template name="Inicio">
+  <!--  {{> Cabecalho}}  para não repetir código. A referência está lá embaixo no Template --> 
+    
+    <h1>Conecte-se com o mundo</h1> <!-- Título do Site --> 
+        <p>Veja fotos  e status das pessoas que segue</p> <!-- Parágrafo do Site --> 
+            <p>Compartilhe as novidades no seu perfil</p>
+                <p>Siga seus amigos e pessoas ao redor do mundo</p>
+    
+    <a href="#">Link</a> <!-- Para fazer referência a links. Lembre-se de colocar HTTPS: --> 
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="Sobre">
+   <!--  {{> Cabecalho}}  para não repetir código. A referência está lá embaixo no Template --> 
+    <h1>Sobre</h1>
+    
+    <h2>Nossa visão</h2>
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada </p>
+    
+    <h2>Nossos valores</h2>
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada </p>
+</template>
+
+<template name="Cabecalho"> <!-- Links das páginas. Foi criado um template para não repetir código --> 
+   <a href="/">Início</a>
+    <a href="/sobre">Sobre</a> 
+</template>
+
+<template name="LayoutPrincipal"> 
+    {{> Cabecalho}} <!-- Sempre vai aparecer -->
+    {{> Template.dynamic template=main}} <!-- Criação de um Layout Dinâmico - Olhar a documentação do Balzer Layout. Sem o Blazer Layout não tem layout?  --> 
+    
 </template>
